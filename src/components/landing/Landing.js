@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "../common/header";
 import NewsItem from "../common/NewsItem";
+import Modal from "../common/Modal";
 import { Link } from "react-router-dom";
 
 const Landing = () => {
@@ -9,6 +10,7 @@ const Landing = () => {
             <Header />
             <div className="container">
                 <NewsItem />
+                <Modal />
             </div>
         </div>
     );
