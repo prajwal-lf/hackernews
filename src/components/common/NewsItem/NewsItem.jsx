@@ -1,5 +1,6 @@
 import React from "react";
 import Modal from 'react-modal';
+import Comment from '../comment/comment';
 
 class NewsItem extends React.Component {
     state = {
@@ -58,7 +59,8 @@ class NewsItem extends React.Component {
                 <Modal isOpen={this.state.modalIsOpen} onRequestClose={() => this.hideModal()}>
                     <a href={this.state.url} target="_blank">{this.state.title}</a>
                     <h6>Comment</h6>
-                    {this.state.kids && this.state.kids.map(comment => `<p>https://hacker-news.firebaseio.com/v0/item/${comment.id}.json?print=pretty</p>`)}
+                    {this.state.kids && this.state.kids.map(id => <Comment id={id}/>)}
+                    {console.log(this.state.kids)}
                 </Modal>
             </ul>
         );
