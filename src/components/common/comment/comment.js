@@ -2,16 +2,20 @@ import React from 'react';
 
 class Comment extends React.Component {
     state = {
-        kid: []
     }
+
+    componentDidMount() {
+        fetch(`<p>https://hacker-news.firebaseio.com/v0/item/${this.props.id}.json?print=pretty</p>`)
+            .then((response) => response.json())
+            .then((data) => {
+                this.setState({...data})
+            });
+    }
+
     render() {
         return(
            <div>
-               {
-               fetch(`<p>https://hacker-news.firebaseio.com/v0/item/${this.props.id}.json?print=pretty</p>`)
-               .then((response) => response.json())
-               .then((data) => {})
-    }
+               Comment {this.state.text}
            </div>
            );
     }
