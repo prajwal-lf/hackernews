@@ -1,7 +1,7 @@
 import React from 'react';
 import Comment from './comment';
 
-class Comment extends React.Component {
+class Reply extends React.Component {
     state = {
     }
 
@@ -16,11 +16,13 @@ class Comment extends React.Component {
     render() {
         return(
            <>
-               <div className="comment__text">{this.state.text}</div>
-               <Comment />
+               <div className="comment__text">
+                   {this.state.text}
+                   {this.state.kids && this.state.kids.map(id => <Comment id={id}/>)}
+                </div>
            </>
            );
     }
 }
 
-export default Comment;
+export default Reply;

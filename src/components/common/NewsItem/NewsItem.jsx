@@ -29,7 +29,7 @@ class NewsItem extends React.Component {
     };
 
     componentDidMount() {
-        fetch("https://hacker-news.firebaseio.com/v0/newstories.json")
+        fetch("https://hacker-news.firebaseio.com/v0/topstories.json")
             .then((response) => response.json())
             .then((data) => {
                 data.map((newsId) => {

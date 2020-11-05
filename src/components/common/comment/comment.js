@@ -18,7 +18,7 @@ class Comment extends React.Component {
            <>
                <div className="comment__text">
                    {this.state.text}
-                   <Reply />
+                   {this.state.kids && this.state.kids.map(id => <Reply id={id}/>)}
                 </div>
            </>
            );
