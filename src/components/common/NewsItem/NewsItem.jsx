@@ -55,7 +55,7 @@ class NewsItem extends React.Component {
                         </a>
                     </li>
                 ))}
-                <Modal isOpen={this.state.modalIsOpen[this.state.id]} onRequestClose={() => this.hideModal()}>
+                <Modal isOpen={this.state.modalIsOpen} onRequestClose={() => this.hideModal()}>
                     <a href={this.state.url} target="_blank">{this.state.title}</a>
                     <h6>Comment</h6>
                     {this.state.kids && this.state.kids.map(comment => `<p>https://hacker-news.firebaseio.com/v0/item/${comment.id}.json?print=pretty</p>`)}

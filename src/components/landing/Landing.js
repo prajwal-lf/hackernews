@@ -10,7 +10,6 @@ const Landing = () => {
             <Header />
             <div className="container">
                 <NewsItem />
-                <Modal />
             </div>
         </div>
     );
