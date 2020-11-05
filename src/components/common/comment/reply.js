@@ -1,5 +1,5 @@
 import React from 'react';
-import Reply from './reply';
+import Comment from './comment';
 
 class Comment extends React.Component {
     state = {
@@ -16,10 +16,8 @@ class Comment extends React.Component {
     render() {
         return(
            <>
-               <div className="comment__text">
-                   {this.state.text}
-                   <Reply />
-                </div>
+               <div className="comment__text">{this.state.text}</div>
+               <Comment />
            </>
            );
     }
