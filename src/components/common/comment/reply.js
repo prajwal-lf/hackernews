@@ -1,5 +1,6 @@
 import React from 'react';
 import Comment from './comment';
+import ReactHTMLParser from 'react-html-parser';
 
 class Reply extends React.Component {
     state = {
@@ -17,7 +18,7 @@ class Reply extends React.Component {
         return(
            <>
                <div className="comment__text">
-                   {this.state.text}
+                    {ReactHTMLParser(this.state.text)}
                    {this.state.kids && this.state.kids.map(id => <Comment id={id}/>)}
                 </div>
            </>
